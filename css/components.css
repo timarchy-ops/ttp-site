@@ -22,7 +22,7 @@
   align-items: center;
   justify-content: space-between;
 }
-.ttp-nav__logo {
+.ttp-nav__logo, .ttp-nav__logo:hover {
   display: flex;
   align-items: center;
   gap: 10px;
