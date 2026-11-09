@@ -1,0 +1,116 @@
+/* Shared nav + footer component styles
+   Uses canonical vars: --fg, --fg-muted, --accent, --accent-h, --bg, --border, --fd, --fb
+   Pages with different var names must alias them before loading this file. */
+
+/* ── NAV ── */
+.ttp-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 60px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+.ttp-nav__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ttp-nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.ttp-nav__brand {
+  font-family: var(--fd);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  color: var(--fg);
+}
+.ttp-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.ttp-nav__links a {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.ttp-nav__links a:hover,
+.ttp-nav__links a.active {
+  color: var(--fg);
+}
+.ttp-nav__cta {
+  background: var(--accent);
+  color: var(--fg) !important;
+  padding: 8px 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: background 0.2s;
+}
+.ttp-nav__cta:hover {
+  background: var(--accent-h) !important;
+}
+
+/* ── FOOTER ── */
+.ttp-footer {
+  border-top: 1px solid var(--border);
+  padding: 32px 40px;
+}
+.ttp-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.ttp-footer__brand {
+  font-family: var(--fd);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--fg);
+}
+.ttp-footer__verse {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: var(--fg-muted);
+  font-style: italic;
+}
+.ttp-footer__links {
+  display: flex;
+  gap: 1.5rem;
+}
+.ttp-footer__links a {
+  color: var(--fg-muted);
+  text-decoration: none;
+  font-size: 0.75rem;
+  transition: color 0.2s;
+}
+.ttp-footer__links a:hover {
+  color: var(--fg);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .ttp-nav { padding: 0 20px; }
+  .ttp-nav__links { display: none; }
+  .ttp-footer { padding: 24px 20px; }
+  .ttp-footer__inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-light.png" media="(prefers-color-scheme: light)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Arms — The Timothy Pattern</title>
+<link rel="stylesheet" href="/css/components.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#2C2C2C;--bg-2:#363636;--fg:#E8E4DC;--fg-2:#C8C4BC;--fg-muted:#7A7672;
+  --accent:#A9502F;--accent-h:#C4663D;--border:#484848;
+  --fd:'Afacad Flux',sans-serif;--fb:'Inter',-apple-system,sans-serif;
+}
+body{background:var(--bg);color:var(--fg);font-family:var(--fb);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+
+
+.hero{padding:100px 40px 80px;max-width:1100px;margin:0 auto}
+.hero-label{font-size:0.6875rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px}
+.hero h1{font-family:var(--fd);font-weight:900;font-size:clamp(3rem,7vw,5.5rem);line-height:1.05;margin-bottom:28px}
+.hero-sub{font-size:1.125rem;font-weight:300;color:var(--fg-2);max-width:560px;line-height:1.75}
+
+section{padding:60px 40px;max-width:1100px;margin:0 auto}
+.section-label{font-size:0.6875rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.section-title{font-family:var(--fd);font-weight:700;font-size:clamp(1.75rem,3vw,2.25rem);margin-bottom:20px;line-height:1.2}
+.section-body{color:var(--fg-2);font-size:1rem;line-height:1.8;max-width:680px}
+.section-body p{margin-bottom:1rem}
+.section-body p:last-child{margin-bottom:0}
+
+.verse-wrap{padding:0 40px;max-width:1180px;margin:0 auto}
+.verse{background:var(--bg-2);border-left:3px solid var(--accent);padding:28px 36px}
+.verse-text{font-family:var(--fd);font-style:italic;font-size:clamp(1.1rem,2vw,1.375rem);line-height:1.65;margin-bottom:12px}
+.verse-ref{font-size:0.75rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent)}
+
+.arms-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--border);border:1px solid var(--border)}
+.arm-card{background:var(--bg-2);padding:32px 28px}
+.arm-name{font-size:0.6875rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.arm-line{font-size:0.9375rem;color:var(--fg-2);line-height:1.65}
+
+hr{border:none;border-top:1px solid var(--border);margin:0 40px}
+
+.rhythm-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:32px}
+.rhythm-card{background:var(--bg-2);padding:36px 32px}
+.rhythm-label{font-size:0.6875rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.rhythm-title{font-family:var(--fd);font-weight:700;font-size:1.25rem;margin-bottom:12px}
+.rhythm-body{font-size:0.9375rem;color:var(--fg-2);line-height:1.7}
+
+.ask-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.ask-item{display:flex;align-items:flex-start;gap:16px;padding:20px 24px;border:1px solid var(--border);background:var(--bg-2)}
+.ask-num{font-size:0.75rem;font-weight:600;letter-spacing:0.1em;color:var(--accent);flex-shrink:0;padding-top:1px;min-width:20px}
+.ask-text{font-size:0.9375rem;color:var(--fg-2);line-height:1.65}
+
+.cta-dual{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin:0 40px 60px}
+.cta-panel{background:var(--bg-2);padding:40px 36px}
+.cta-panel.featured{border-left:3px solid var(--accent)}
+.cta-role{font-size:0.6875rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.cta-heading{font-family:var(--fd);font-weight:700;font-size:1.25rem;margin-bottom:16px}
+.cta-desc{font-size:0.9375rem;color:var(--fg-2);line-height:1.65;margin-bottom:24px}
+.btn{padding:12px 28px;font-size:0.75rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;display:inline-block;border:1px solid var(--border);color:var(--fg-2);transition:all 0.2s}
+.btn:hover{border-color:var(--fg-2);color:var(--fg)}
+.btn-primary{background:var(--accent);border-color:var(--accent);color:var(--fg)}
+.btn-primary:hover{background:var(--accent-h);border-color:var(--accent-h)}
+
+
+@media(max-width:768px){
+  nav{padding:0 20px}.nav-links{display:none}
+  .hero,.verse-wrap,section,hr{padding-left:20px;padding-right:20px}
+  .hero{padding-top:60px;padding-bottom:50px}
+  .rhythm-grid{grid-template-columns:1fr}
+  .cta-dual{grid-template-columns:1fr;margin:0 20px 40px}
+  footer{padding:24px 20px}
+}
+
+
+</style>
+<script src="/js/nav.js"></script>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-label">The Entry Point</div>
+  <h1>The Arms</h1>
+  <p class="hero-sub">Activity-based micro-groups built around what men are already doing. The arm is where trust is built. Trust is what makes everything else possible.</p>
+</div>
+
+<div class="verse-wrap">
+  <div class="verse">
+    <div class="verse-text">"As iron sharpens iron, so one person sharpens another."</div>
+    <div class="verse-ref">Proverbs 27:17</div>
+  </div>
+</div>
+
+<section>
+  <div class="section-label">The Problem</div>
+  <div class="section-title">Every man's calendar is already full</div>
+  <div class="section-body">
+    <p>Men do not lack activity. They lack men to do it with who know them well enough to matter. The arm starts where men already are. It does not ask them to add another meeting to their week. It asks them to do what they are already doing, with other men, consistently enough that something real develops.</p>
+    <p>An arm is a small group of 4 to 8 men, organized around a shared activity. The activity is not the point. The relationships the activity produces are.</p>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="section-label">Current Arms</div>
+  <div class="section-title">Where men meet</div>
+  <div class="arms-grid">
+    <div class="arm-card">
+      <div class="arm-name">Running</div>
+      <div class="arm-line">Miles become conversation. Conversation becomes trust.</div>
+    </div>
+    <div class="arm-card">
+      <div class="arm-name">Football</div>
+      <div class="arm-line">The pitch demands teamwork. What happens off it?</div>
+    </div>
+    <div class="arm-card">
+      <div class="arm-name">Swimming</div>
+      <div class="arm-line">Discipline in solitude, brotherhood in the lanes.</div>
+    </div>
+    <div class="arm-card">
+      <div class="arm-name">Gym</div>
+      <div class="arm-line">Men already show up here. The arm asks who they show up with, and why.</div>
+    </div>
+    <div class="arm-card">
+      <div class="arm-name">Fishing</div>
+      <div class="arm-line">Hours of quiet. The kind of conversation that only happens when no one is in a hurry.</div>
+    </div>
+    <div class="arm-card">
+      <div class="arm-name">Gaming</div>
+      <div class="arm-line">Men spend more hours here than almost anywhere. Time worth redeeming.</div>
+    </div>
+    <div class="arm-card">
+      <div class="arm-name">Biking</div>
+      <div class="arm-line">The road does something to men. This arm finds out what.</div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section>
+  <div class="section-label">Monthly Rhythm</div>
+  <div class="section-title">Two gatherings. One purpose.</div>
+  <div class="rhythm-grid">
+    <div class="rhythm-card">
+      <div class="rhythm-label">Monthly Social</div>
+      <div class="rhythm-title">Coffee or a meal</div>
+      <div class="rhythm-body">Time outside the activity. A table, some food, a longer conversation. This is where men go from acquaintances to something more. No agenda. No format. Just time.</div>
+    </div>
+    <div class="rhythm-card">
+      <div class="rhythm-label">Monthly Spiritual</div>
+      <div class="rhythm-title">Bible study or prayer</div>
+      <div class="rhythm-body">One gathering per month that goes deeper. Scripture, prayer, and the kind of honesty that only surfaces when men have already built some trust. The arm leader sets the direction.</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Arm Leader</div>
+  <div class="section-title">What it asks of you</div>
+  <div class="section-body">
+    <p>An arm does not run itself. It needs a man willing to hold the space: set the rhythm, invite others in, and show up consistently enough that the group becomes something the men can count on.</p>
+  </div>
+  <ul class="ask-list">
+    <li class="ask-item"><span class="ask-num">01</span><span class="ask-text">Organize the monthly social and the monthly spiritual gathering</span></li>
+    <li class="ask-item"><span class="ask-num">02</span><span class="ask-text">Invite men into the arm and maintain a group of 4 to 8</span></li>
+    <li class="ask-item"><span class="ask-num">03</span><span class="ask-text">Show up consistently and model what the arm is about</span></li>
+    <li class="ask-item"><span class="ask-num">04</span><span class="ask-text">Stay connected to the broader TTP structure and bring what you are learning back to your arm</span></li>
+  </ul>
+</section>
+
+<div class="cta-dual">
+  <div class="cta-panel">
+    <div class="cta-role">For Most Men</div>
+    <div class="cta-heading">Join an Arm</div>
+    <div class="cta-desc">Find your entry point. The right arm is the one that fits where your calendar already has space.</div>
+    <a href="https://tally.so/r/laBE15" target="_blank" rel="noopener noreferrer" class="btn">Join the Movement</a>
+  </div>
+  <div class="cta-panel featured">
+    <div class="cta-role">For the Right Man</div>
+    <div class="cta-heading">Lead an Arm</div>
+    <div class="cta-desc">If you have been thinking about starting something, this is the most concrete first step you can take.</div>
+    <a href="https://tally.so/r/laBE15" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Start an Arm</a>
+  </div>
+</div>
+
+<script src="/js/footer.js"></script>
+</body>
+</html>

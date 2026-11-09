@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-light.png" media="(prefers-color-scheme: light)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — The Timothy Pattern</title>
+  <link rel="stylesheet" href="/css/components.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap">
+  <style>
+    :root {
+      --bg: #2C2C2C;
+      --card: #363636;
+      --elev: #424242;
+      --deep: #1C1A18;
+      --bone: #E8E4DC;
+      --brick: #A9502F;
+      --brick-h: #C4663D;
+      --body-c: #C8C4BC;
+      --muted: #7A7672;
+      --border: #484848;
+      --fd: 'Afacad Flux', sans-serif;
+      --fb: 'Inter', -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--body-c); font-family: var(--fb); font-weight: 400; line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--deep);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo svg { width: 32px; height: 32px; }
+    .nav-logo-text { font-family: var(--fd); font-weight: 900; font-size: 1.1rem; color: var(--bone); letter-spacing: 0.05em; }
+    .nav-links { display: flex; align-items: center; gap: 1.5rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--bone); }
+    .nav-cta {
+      background: var(--brick); color: var(--bone) !important;
+      padding: 0.4rem 1rem; font-weight: 600 !important; font-size: 0.8rem !important;
+      text-transform: uppercase; letter-spacing: 0.08em !important;
+    }
+    .nav-cta:hover { background: var(--brick-h); }
+
+    .legal-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+    .legal-eyebrow {
+      font-family: var(--fd); font-weight: 700; font-size: 0.75rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--brick); margin-bottom: 0.75rem;
+    }
+    h1 {
+      font-family: var(--fd); font-weight: 900; font-size: clamp(2rem, 5vw, 2.8rem);
+      color: var(--bone); line-height: 1.1; margin-bottom: 0.5rem;
+    }
+    .last-updated {
+      font-size: 0.8rem; color: var(--muted); margin-bottom: 3rem;
+      padding-bottom: 2rem; border-bottom: 1px solid var(--border);
+    }
+    h2 {
+      font-family: var(--fd); font-weight: 700; font-size: 1.2rem;
+      color: var(--bone); margin-top: 2.5rem; margin-bottom: 0.75rem;
+    }
+    p { margin-bottom: 1rem; color: var(--body-c); font-size: 0.95rem; }
+    ul { padding-left: 1.25rem; margin-bottom: 1rem; }
+    ul li { color: var(--body-c); font-size: 0.95rem; margin-bottom: 0.4rem; }
+    a { color: var(--brick); text-decoration: none; }
+    a:hover { color: var(--brick-h); text-decoration: underline; }
+    .rights-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem; margin: 1rem 0;
+    }
+    .rights-item {
+      background: var(--card); border: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+    }
+    .rights-item strong { color: var(--bone); font-size: 0.85rem; display: block; margin-bottom: 0.3rem; }
+    .rights-item span { font-size: 0.85rem; color: var(--muted); }
+
+    footer {
+      background: var(--deep);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer-links { display: flex; justify-content: center; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--bone); }
+    .footer-copy { margin-top: 1rem; color: var(--muted); font-size: 0.75rem; }
+  
+
+</style>
+<script src="/js/nav.js"></script>
+</head>
+<body>
+
+<div class="legal-wrap">
+  <p class="legal-eyebrow">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="last-updated">Last updated: November 2024 · This policy applies to residents of the EU/EEA and all other users globally.</p>
+
+  <p>The Timothy Pattern ("TTP", "we", "us") is committed to protecting your privacy. This Privacy Policy explains what personal data we collect, why we collect it, how we use it, and your rights under applicable law, including the EU General Data Protection Regulation (GDPR) and Romania's data protection framework.</p>
+
+  <h2>1. Who Is Responsible for Your Data</h2>
+  <p>The data controller for this site is The Timothy Pattern, based in Oradea, Romania. If you have any questions or requests regarding your personal data, please contact us through any active TTP channel or the forms on this site.</p>
+
+  <h2>2. What Data We Collect</h2>
+  <p>We collect personal data only when you voluntarily provide it through our forms. This may include:</p>
+  <ul>
+    <li>Your name</li>
+    <li>Your email address</li>
+    <li>Your city or region</li>
+    <li>Answers to onboarding questions (e.g. what arm you are interested in, your discipleship background)</li>
+    <li>Prayer requests submitted to the Prayer Network (which may be anonymous)</li>
+  </ul>
+  <p>We do not use cookies for tracking or advertising. We do not collect any data passively through this website.</p>
+
+  <h2>3. How We Use Your Data</h2>
+  <p>We use the data you submit for the following purposes:</p>
+  <ul>
+    <li><strong>To connect you with a local Arm or Triad.</strong> Your name, location, and preferences are shared with an Arm Leader or Triad coordinator in your area.</li>
+    <li><strong>To follow up on your application.</strong> We may contact you via email to progress your onboarding.</li>
+    <li><strong>To send prayer requests to the Prayer Network.</strong> Prayer submissions may be anonymised before being shared with the network, as indicated on the form.</li>
+    <li><strong>To improve TTP.</strong> We may use aggregated, anonymised data to understand how the movement is growing.</li>
+  </ul>
+  <p>We do not sell, rent, or share your personal data with any third parties for marketing purposes.</p>
+
+  <h2>4. Legal Basis for Processing (GDPR)</h2>
+  <p>Under GDPR, we process your data on the following legal grounds:</p>
+  <ul>
+    <li><strong>Consent</strong> — by submitting a form, you are voluntarily providing your data for the stated purpose.</li>
+    <li><strong>Legitimate interests</strong> — to manage our community, follow up with applicants, and coordinate discipleship activities.</li>
+    <li><strong>Compliance with legal obligations</strong> — where applicable law requires us to retain or report certain data.</li>
+  </ul>
+
+  <h2>5. How Long We Keep Your Data</h2>
+  <p>We retain your data for as long as you are an active participant in TTP or as long as reasonably necessary to fulfil the purposes described above. If you request deletion, we will remove your data within 30 days, except where we are required by law to retain it.</p>
+
+  <h2>6. Third-Party Services</h2>
+  <p>Our forms are hosted by <strong>Tally</strong> (tally.so), a third-party form platform. By submitting a form, you are also subject to Tally's privacy policy. We encourage you to review it at <a href="https://tally.so/help/privacy-policy" target="_blank" rel="noopener noreferrer">tally.so/help/privacy-policy</a>.</p>
+  <p>This website is hosted on <strong>Vercel</strong>. Vercel may process request metadata (such as IP addresses) in the course of serving the site. See Vercel's privacy policy for details.</p>
+  <p>Fonts are loaded from <strong>Google Fonts</strong>, which may log your IP address in accordance with Google's privacy policy.</p>
+
+  <h2>7. Your Rights Under GDPR</h2>
+  <p>If you are located in the EU/EEA, you have the following rights regarding your personal data:</p>
+  <div class="rights-grid">
+    <div class="rights-item">
+      <strong>Right of Access</strong>
+      <span>Request a copy of the data we hold about you.</span>
+    </div>
+    <div class="rights-item">
+      <strong>Right to Rectification</strong>
+      <span>Ask us to correct inaccurate or incomplete data.</span>
+    </div>
+    <div class="rights-item">
+      <strong>Right to Erasure</strong>
+      <span>Request deletion of your personal data ("right to be forgotten").</span>
+    </div>
+    <div class="rights-item">
+      <strong>Right to Restriction</strong>
+      <span>Ask us to limit how we use your data in certain circumstances.</span>
+    </div>
+    <div class="rights-item">
+      <strong>Right to Portability</strong>
+      <span>Receive your data in a machine-readable format.</span>
+    </div>
+    <div class="rights-item">
+      <strong>Right to Object</strong>
+      <span>Object to processing based on legitimate interests.</span>
+    </div>
+    <div class="rights-item">
+      <strong>Right to Withdraw Consent</strong>
+      <span>Withdraw consent at any time without affecting prior processing.</span>
+    </div>
+    <div class="rights-item">
+      <strong>Right to Lodge a Complaint</strong>
+      <span>File a complaint with the Romanian supervisory authority (ANSPDCP) or your local data protection authority.</span>
+    </div>
+  </div>
+  <p>To exercise any of these rights, contact us through any active TTP channel or the forms on this site. We will respond within 30 days.</p>
+
+  <h2>8. Data Security</h2>
+  <p>We take reasonable technical and organisational measures to protect your personal data against unauthorised access, loss, or misuse. All data submitted via forms is transmitted over encrypted (HTTPS) connections. Access to form data is limited to TTP leadership with a legitimate need.</p>
+
+  <h2>9. Children's Privacy</h2>
+  <p>TTP is not directed at individuals under the age of 16. We do not knowingly collect personal data from children. If you believe a minor has submitted data to us, please contact us and we will delete it promptly.</p>
+
+  <h2>10. Changes to This Policy</h2>
+  <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. Continued use of the site after changes are posted constitutes acceptance of the revised policy.</p>
+
+  <h2>11. Contact and Supervisory Authority</h2>
+  <p>For any privacy-related enquiries, contact us through TTP's active channels. If you are unsatisfied with our response, you have the right to lodge a complaint with the Romanian National Supervisory Authority for Personal Data Processing:</p>
+  <ul>
+    <li>ANSPDCP (Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal)</li>
+    <li>Website: <a href="https://www.dataprotection.ro" target="_blank" rel="noopener noreferrer">www.dataprotection.ro</a></li>
+  </ul>
+</div>
+
+<script src="/js/footer.js"></script>
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-light.png" media="(prefers-color-scheme: light)">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Timothy Pattern</title>
+<link rel="stylesheet" href="/css/components.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@400;700;900&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* ── TOKENS ── */
+:root {
+  /* ── var aliases so shared components work on homepage ── */
+  --fg: var(--bone);
+  --fg-muted: var(--muted);
+  --accent: var(--brick);
+  --accent-h: #C4663D;
+  --fd: 'Afacad Flux', sans-serif;
+  --fb: 'Inter', -apple-system, sans-serif;
+
+  --bg:       #2C2C2C;
+  --deep:     #1C1A18;
+  --card:     #363636;
+  --elev:     #424242;
+  --bone:     #E8E4DC;
+  --brick:    #A9502F;
+  --body-c:   #C8C4BC;
+  --muted:    #7A7672;
+  --border:   #484848;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--body-c);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; }
+
+/* ── LAYOUT ── */
+.wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.row {
+  padding-left:  48px;
+  padding-right: 48px;
+}
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  padding: 11px 22px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+.btn:hover { opacity: .82; }
+.btn--brick,
+.btn--brick-lg {
+  font-size: 12px;
+  letter-spacing: 0.6em;
+  padding: 15px 30px;
+}
+.btn--outline {
+  border: 1px solid var(--border);
+  color: var(--bone);
+}
+
+/* ── NAVBAR ── */
+.nav-rule { margin-top: 0; }
+
+/* ── HERO ── */
+.hero-spacer { height: 73px; }
+.hero-band {
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse 72% 55% at 50% 48%, rgba(60, 30, 18, 0.9) 0%, rgba(28, 20, 15, 0.95) 55%, rgba(16, 12, 10, 1) 100%),
+    linear-gradient(180deg, #131110 0%, #1a1512 100%);
+}
+.hero-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-block: 100px;
+  gap: 0;
+  max-width: 760px;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5em;
+  text-transform: uppercase;
+  color: var(--brick);
+  margin-bottom: 22px;
+}
+.hero-h1 {
+  font-family: 'Afacad Flux', sans-serif;
+  font-size: clamp(52px, 8vw, 82px);
+  font-weight: 700;
+  line-height: 1.07;
+  color: var(--bone);
+  text-wrap: balance;
+  margin-bottom: 22px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: var(--body-c);
+  line-height: 1.72;
+  margin-bottom: 36px;
+}
+
+/* ── WHAT IS TTP ── */
+.what-band { background: var(--bg); }
+.what-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-block: 100px;
+  gap: 0;
+  max-width: 760px;
+}
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5em;
+  text-transform: uppercase;
+  color: var(--brick);
+  margin-bottom: 20px;
+}
+.section-h2 {
+  font-family: 'Afacad Flux', sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700;
+  line-height: 1.18;
+  color: var(--bone);
+  text-wrap: balance;
+  margin-bottom: 32px;
+}
+.body-block {
+  font-size: 16px;
+  color: var(--body-c);
+  line-height: 1.8;
+  width: 100%;
+}
+.body-block p + p { margin-top: 18px; }
+.body-block .scripture {
+  font-style: italic;
+  color: var(--muted);
+  border-left: 2px solid var(--brick);
+  padding-left: 18px;
+  margin: 24px 0;
+}
+.body-block .scripture cite {
+  display: block;
+  font-style: normal;
+  font-size: 13px;
+  margin-top: 8px;
+  letter-spacing: 0.1em;
+}
+
+/* ── HOW WE DO IT ── */
+.how-band {
+  background: var(--card);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.how-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding-block: 100px;
+  gap: 0;
+}
+.pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin-top: 56px;
+  text-align: left;
+}
+.pillar-card {
+  background: var(--elev);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.pillar-accent {
+  width: 3px;
+  height: 22px;
+  background: var(--brick);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.pillar-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.pillar-title {
+  font-family: 'Afacad Flux', sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--bone);
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+.pillar-body {
+  font-size: 14px;
+  color: var(--body-c);
+  line-height: 1.78;
+  flex: 1;
+}
+.pillar-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* ── FOOTER ── */
+
+/* ── RESPONSIVE ── */
+@media (max-width: 800px) {
+  .row {
+    padding-left:  20px;
+    padding-right: 20px;
+  }
+  .nav-links .hide-mobile { display: none; }
+  .hero-inner { padding-block: 60px; max-width: 100%; }
+  .what-inner { padding-block: 60px; max-width: 100%; }
+  .how-inner  { padding-block: 60px; }
+  .hero-eyebrow { letter-spacing: 0.6em; }
+  .hero-sub { font-size: 15px; }
+  .pillar-grid { grid-template-columns: 1fr; margin-top: 36px; }
+  .pillar-card { padding: 22px; }
+  .btn--brick-lg { padding: 14px 24px; font-size: 11px; width: 100%; text-align: center; }
+  .footer-inner { flex-direction: column; gap: 24px; }
+  .footer-logo { flex-direction: row; }
+}
+</style>
+</head>
+<body>
+
+<script src="/js/nav.js"></script>
+<!-- HERO -->
+<div class="hero-spacer"></div>
+<section class="hero-band" id="hero">
+  <div class="wrap row hero-inner">
+    <h1 class="hero-h1">The Pattern<br>That Forms Men</h1>
+    <p class="hero-sub">
+      Most men are never truly formed by another man.<br>
+      The Timothy Pattern is a structured brotherhood built on one ancient principle: the men ahead of you invest in you, so you can invest in the men coming up behind you.
+    </p>
+    <a href="https://tally.so/r/laBE15" target="_blank" rel="noopener noreferrer" class="btn btn--brick btn--brick-lg">Apply to Join</a>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- WHAT IS TTP -->
+<section class="what-band" id="about">
+  <div class="wrap row">
+    <div class="what-inner">
+      <span class="section-label">The Pattern</span>
+      <h2 class="section-h2">What is The Timothy Pattern?</h2>
+      <div class="body-block">
+        <p>89% of churches use the Sunday sermon as their primary discipleship tool. 95% of that content is forgotten within three days. Men are being informed, not formed.</p>
+        <p>Iron sharpens iron. That is not a motivational phrase. It is a description of what real formation requires: friction, proximity, and another man who refuses to let you stay soft. Proverbs 27:17.</p>
+        <blockquote class="scripture">
+          "The things you have heard me say in the presence of many witnesses entrust to reliable men who will also be qualified to teach others."
+          <cite>2 Timothy 2:2</cite>
+        </blockquote>
+        <p>TTP is the structure built around that truth. Not a program, not a conference, not another meeting on your calendar. A relational framework that connects a man to someone ahead of him, someone beside him, and gives him someone to pour into. You enter through activity. You go deeper through relationship. The pattern transmits itself.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- HOW WE DO IT -->
+<section class="how-band" id="how">
+  <div class="wrap row">
+    <div class="how-inner">
+      <span class="section-label">The Structure</span>
+      <h2 class="section-h2">How it works.</h2>
+      <div class="pillar-grid">
+
+        <div class="pillar-card">
+          <div class="pillar-accent"></div>
+          <span class="pillar-num">01</span>
+          <div class="pillar-title">The Triad</div>
+          <p class="pillar-body">One Above. One Across. One Below. Not a small group but a structure of accountability and transmission. You are responsible to the man above you and for the man below you.</p>
+          <div class="pillar-actions">
+            <a href="/triad" class="btn btn--outline">Learn More</a>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-accent"></div>
+          <span class="pillar-num">02</span>
+          <div class="pillar-title">The Arms</div>
+          <p class="pillar-body">An Arm forms around a single shared activity: running, gym, motorcycles, fishing. You meet in person at least once a week. No hierarchy beyond logistics. Brotherhood through doing.</p>
+          <div class="pillar-actions">
+            <a href="/arms" class="btn btn--outline">Learn More</a>
+          </div>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-accent"></div>
+          <span class="pillar-num">03</span>
+          <div class="pillar-title">The Prayer Network</div>
+          <p class="pillar-body">TPN is the prayer backbone of everything TTP builds. Open to men and women. Members submit requests, carry each other's needs, and receive a shared prayer list three times a week. Prayer is not a footnote. It is the foundation.</p>
+          <div class="pillar-actions">
+            <a href="/prayer-network" class="btn btn--outline">Learn More</a>
+            <a href="https://tally.so/r/perEWE" target="_blank" rel="noopener noreferrer" class="btn btn--brick">Join TPN</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<!-- COMING SOON -->
+<section style="background:var(--deep);padding:48px 0;text-align:center;">
+  <p style="font-size:11px;font-weight:600;letter-spacing:0.45em;text-transform:uppercase;color:var(--muted);">More coming soon &nbsp;&mdash;&nbsp; The platform is in development</p>
+</section>
+
+<div class="rule"></div>
+
+<!-- FOOTER -->
+<script src="/js/footer.js"></script>
+</body>
+</html>
